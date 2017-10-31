@@ -1,7 +1,5 @@
 FROM php:7.0-apache
 
-MAINTAINER Rafael Corrêa Gomes <rafaelcg_stz@hotmail.com>
-
 ENV XDEBUG_PORT 9000
 
 # Install System Dependencies
@@ -100,6 +98,7 @@ RUN yes | pecl install xdebug && \
 
 ADD conf/php.ini /usr/local/etc/php/php.ini
 ADD conf/custom-xdebug.ini /usr/local/etc/php/conf.d/custom-xdebug.ini
+ADD conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY ./bin/* /usr/local/bin/
 RUN chmod +x /usr/local/bin/*
 
