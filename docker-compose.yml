@@ -2,10 +2,9 @@ version: '2'
 services:
 
   apache:
-    image: rafaelcgstz/magento2
-    # build: .
+    build: .
     ports:
-        - "80:80" # web
+        - "8002:80" # web
         - "9001:9000" # xdebug
         - "2222:22" # ssh
         - "35729:35729" # live reload
